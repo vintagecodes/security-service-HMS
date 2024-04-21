@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +26,7 @@ public class TestController {
 	private AuthService authService;
 	
 	@GetMapping("/users")
-	public List<User> getUsers(){
+	public List<User> getUsers(@RequestHeader(name = "Authorization") String auth){
 		return authService.getAllUsers();
 	}
 	
