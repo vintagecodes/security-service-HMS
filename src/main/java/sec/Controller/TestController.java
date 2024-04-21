@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import sec.model.User;
 import sec.model.service.AuthService;
-@CrossOrigin(origins = "*", maxAge = 3600, allowCredentials="true")
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/user-auth")
 public class TestController {
