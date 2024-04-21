@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.core.Authentication;
@@ -49,33 +50,7 @@ public class AuthController {
 		
 		return authService.registerUser(signUpRequest);
 	}
-	
-	@GetMapping("/users")
-	public List<User> getUsers(){
-		return authService.getAllUsers();
-	}
-	
-	@GetMapping("/logonDetails/{username}")
-	public ResponseEntity<?> getLogonInfo(@PathVariable("username") String username)
-	{
-		return authService.getLogonInfoAsPerUserName(username);
-	}
-	
-	@GetMapping("/view/{username}")
-	public Optional<User> getByUsername(@PathVariable String username){
-		return authService.getDetailsByUsername(username);
-	}
-	
-	@DeleteMapping("/delete/{username}")
-	public void deleteUsers(@PathVariable("username") String username) {
-		authService.deleteUsers(username);
-	}
-	
-	@PutMapping("/logout/{username}")
-	public String logout(@PathVariable("username") String username)
-	{
-		return authService.logoutUser(username);
-	}
+
 //	
 //	@PostMapping("/logout")
 //	public LogoutConfigurer<HttpSecurity> logout(HttpSecurity http) throws Exception{
