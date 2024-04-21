@@ -26,7 +26,7 @@ public class TestController {
 	private AuthService authService;
 	
 	@GetMapping("/users")
-	public List<User> getUsers(@RequestHeader(name = "Authorization") String auth){
+	public List<User> getUsers(){
 		return authService.getAllUsers();
 	}
 	
