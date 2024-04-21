@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import sec.model.User;
 import sec.model.service.AuthService;
-@CrossOrigin(origins = "https://security-service-hms.onrender.com", maxAge = 3600)
+@CrossOrigin(origins = "https://thehealthconsultor.netlify.app", maxAge = 7200, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/user-auth")
 public class TestController {
