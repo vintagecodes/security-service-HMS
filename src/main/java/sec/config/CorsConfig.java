@@ -20,7 +20,7 @@ public class CorsConfig
 		configuration.setAllowedMethods(Arrays.asList("GET","POST","DELETE","OPTIONS","PUT"));
 		configuration.setAllowedHeaders(Arrays.asList("Authorization"));
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/**", configuration);
+		source.registerCorsConfiguration("/api/user-auth/**", configuration);
 		return source;
 	}
 	
