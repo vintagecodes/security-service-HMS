@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import sec.model.User;
 import sec.model.service.AuthService;
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/user-auth")
 public class TestController {
