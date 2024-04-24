@@ -30,7 +30,7 @@ import sec.payLoad.SignupRequest;
 import sec.payLoad.JwtResponse;
 import sec.model.User;
 import sec.model.service.AuthService;
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {

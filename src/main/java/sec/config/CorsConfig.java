@@ -18,9 +18,9 @@ public class CorsConfig
 		CorsConfiguration configuration = new CorsConfiguration();
 		configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
 		configuration.setAllowedMethods(Arrays.asList("GET","POST","DELETE","OPTIONS","PUT"));
-		configuration.setAllowedHeaders(Arrays.asList("Authorization"));
+		configuration.setAllowedHeaders(Arrays.asList("authorization","content-type"));
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-		source.registerCorsConfiguration("/api/user-auth/**", configuration);
+		source.registerCorsConfiguration("/**", configuration);
 		return source;
 	}
 	
